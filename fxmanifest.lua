@@ -9,7 +9,7 @@ version '1.0 Beta'
 
 shared_scripts {
     'config.lua',
-    '@ox_lib/init.lua',
+    '@ox_lib/init.lua', -- หากไม่ได้ใช้ให้ลบออก
 }
 
 client_script 'cl.lua'
