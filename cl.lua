@@ -1,4 +1,3 @@
-
 local Anti = false
 local AntiSpacebar = false
 local count = 0
