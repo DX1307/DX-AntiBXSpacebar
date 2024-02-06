@@ -10,10 +10,10 @@ CreateThread(function()
 		Wait(9)
 		local gotWeapon, hasWeapon = GetCurrentPedWeapon(GetPlayerPed, true)
 		if gotWeapon ~= false then
+			
 			for k, v in pairs(Config.Key) do
 				if IsControlPressed(0, v) then
 					sleep = false
-					stopWeapon(hasWeapon)
 					Anti = true
 					CreateThread(function()
 						while Anti do
@@ -25,6 +25,7 @@ CreateThread(function()
 							Wait(9)
 						end
 					end)
+					stopWeapon(hasWeapon)
 				end
 			end
 
@@ -60,7 +61,6 @@ local UnarmedHash = `WEAPON_UNARMED`
 
 function stopWeapon(hasWeapon)
 	local PlayerPedId = PlayerPedId()
-	Anti = true
 	SetCurrentPedWeapon(PlayerPedId, UnarmedHash, true)
 	RemoveWeaponFromPed(PlayerPedId, hasWeapon)
 	Wait(Config.DelayAntiKey * 1000)
