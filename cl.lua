@@ -31,7 +31,7 @@ CreateThread(function()
 		end
 
 		if sleep then
-			Wait(200)
+			Wait(1000)
 		end
 	end
 end)
